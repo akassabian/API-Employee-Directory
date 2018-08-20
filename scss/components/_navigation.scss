@@ -1,0 +1,52 @@
+.nav li a{
+    @extend %nav__items;
+}
+
+
+@include mediaq(small) {
+
+    .nav li a{
+        margin: 0 auto;        
+    }
+    .nav{
+        width: 100%;
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .nav li{
+        padding: 5px;
+        padding-bottom: 7px;
+        margin: auto;
+    }
+
+    .nav li:first-child{
+        width: 90vw;
+        text-align: center;
+        background-color: $menu-active;
+        border: 1px solid white;
+        border-radius: 8px;
+    }
+
+}
+
+
+@include mediaq(medium) {
+
+    .nav{
+        flex-direction: row;
+    }
+
+    .nav li{
+        margin: 0 10px;
+        padding: 5px;
+        padding-bottom: 7px;
+    }
+
+    .nav li:first-child{
+        background-color: $menu-active;
+        border: 1px solid white;
+        border-radius: 8px;
+    }
+
+}

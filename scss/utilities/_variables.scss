@@ -1,0 +1,56 @@
+// Grid
+
+$g__col--width    : 6.5%;
+$g__gutter--width : 2%;
+$g__col--count    : 12;
+
+// Breakpoints
+
+$brkpoint__sm: 1px;
+$brkpoint__md: 769px;
+$brkpoint__lg: 1100px;
+
+// Font
+$open-sans: 'Open Sans', sans-serif;
+
+// colors
+
+$viking: #58E1C1;
+$malibu: #51ddfc;
+$riptide : #80E8D1;
+$shakespeare:  #3FABCA;
+$anakiwa: #7ee6fd;
+$french-lilac : #deb2ee;
+$vista-blue: #88D9A0;
+$sea-pink: #EC9FA3;
+$vivid-tangerine: #FD9F85;
+$emerald: #63cc82; 
+$sunglo: #e4757a;
+$coral: #fd7856;
+$purple-mountains-majesty: #927bc1;
+
+
+
+// Color Usage
+
+$link: $malibu;
+
+$headline: $viking;
+$sideline: $viking;
+$formline: $viking;
+
+$menu-active: $viking;
+
+$col3: $french-lilac;
+$col4: $anakiwa;
+$col5: $vista-blue;
+$col6: $shakespeare;
+$col7: $sea-pink;
+$col8: $vivid-tangerine;
+$col12: $riptide;
+
+$btn-default: $malibu;
+$btn-success: $emerald;
+$btn-error: $sunglo;
+$btn-warn: $coral;
+$btn-info: $purple-mountains-majesty;

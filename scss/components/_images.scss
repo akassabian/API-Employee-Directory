@@ -1,0 +1,16 @@
+.img--frame{
+    @extend %images;
+    padding: 10px;
+}
+
+.img--avatar{
+    padding: 10px;
+    height: 199px;
+    width: 199px;
+}
+
+@include mediaq(small){
+    .img--frame{
+        width: 100%;
+    }
+}

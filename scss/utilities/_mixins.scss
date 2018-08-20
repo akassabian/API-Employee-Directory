@@ -1,0 +1,136 @@
+@mixin flexbox__settings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@mixin flexbox__settings--nowrap {
+    display: flex;
+}
+
+@mixin mediaq($break){
+    @if $break == "small" {
+        @media (min-width: $brkpoint__sm) and (max-width: $brkpoint__md){
+            @content;
+        }
+    }
+    @else if $break == "medium" {
+        @media (min-width: $brkpoint__md + 1){
+            @content;
+        }        
+    }
+    @else if $break == "large" {
+       @media (min-width: $brkpoint__lg){
+            @content;
+         }
+    }
+    @else {
+        @error "Error: No value could be retrieved for '#{$break}'.";
+    }
+}
+
+@mixin g-columns-mobile{
+    @for $i from 1 through $g__col--count{
+        .grid__col--#{$i} {
+            width: 100%;
+            @include flexbox__settings;
+        }
+
+        .grid__col--#{$i}.theme__colors {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        padding: 10px 0 10px 10px;
+        @include flexbox__settings;
+        justify-content: left;
+
+        @if $i == 3 {
+            background-color: $col3;
+        }
+
+        @else if $i == 4 {
+            background-color: $col4;
+        }
+
+        @else if $i == 5 {
+            background-color: $col5;
+        }
+
+        @else if $i == 6 {
+            background-color: $col6;
+        }
+
+        @else if $i == 7 {
+            background-color: $col7;
+        }
+
+        @else if $i == 8 {
+            background-color: $col8;
+        }
+
+        @else if $i == 12 {
+            background-color: $col12;
+        }
+
+        }
+    }
+}
+
+@mixin g-columns{
+    @for $i from 1 through $g__col--count{
+
+        $g__total--width: 100%;
+        $target: ($g__col--width * $i) + ($g__gutter--width * ($i - 1));
+
+        // Generate column modifier classes
+
+        .grid__col--#{$i} {
+            width: percentage($target / $g__total--width);
+            @include flexbox__settings;
+        }
+
+        .grid__col--#{$i}.theme__colors {
+            width: percentage($target / $g__total--width);
+            border-radius: 8px;
+            padding: 10px 0;
+
+            @if $i == 3 {
+                background-color: $col3;
+            }
+
+            @else if $i == 4 {
+                background-color: $col4;
+            }
+
+            @else if $i == 5 {
+                background-color: $col5;
+            }
+
+            @else if $i == 6 {
+                background-color: $col6;
+            }
+
+            @else if $i == 7 {
+                background-color: $col7;
+            }
+
+            @else if $i == 8 {
+                background-color: $col8;
+            }
+
+            @else if $i == 12 {
+                background-color: $col12;
+            }
+
+            @include flexbox__settings;
+        }
+
+    }
+}
+
+@mixin col__gutters {
+    & + & {
+        margin-left: $g__gutter--width;
+        @content;
+    }
+}

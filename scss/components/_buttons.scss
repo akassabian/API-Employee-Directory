@@ -1,0 +1,68 @@
+[class^="btn"]{
+    border-radius: 8px;
+    border:none;
+    color: white;
+    text-transform: uppercase;
+    padding: 8px 0;
+}
+
+@include mediaq(small){
+    [class^="btn"]{
+        width: 95%;
+        margin: 0 auto 20px;
+    }
+
+    .btn--default.theme__colors{
+        background-color: $btn-default;
+    }
+
+    .btn--success.theme__colors{
+        background-color: $btn-success;
+    }
+
+    .btn--error.theme__colors{
+        background-color: $btn-error;
+    }
+
+    .btn--warning.theme__colors{
+        background-color: $btn-warn;
+    }
+
+    .btn--info.theme__colors{
+        background-color: $btn-info;
+    }
+}
+
+
+@include mediaq(medium){
+
+    .btn--default.theme__colors{
+        background-color: $btn-default;
+        width: 17.6%;
+        margin: 0 1% 0 2%;
+    }
+
+    .btn--success.theme__colors{
+        background-color: $btn-success;
+        width: 17.6%;
+        margin: 0 1%;
+    }
+
+    .btn--error.theme__colors{
+        background-color: $btn-error;
+        width: 17.6%;
+        margin: 0 1%;
+    }
+
+    .btn--warning.theme__colors{
+        background-color: $btn-warn;
+        width: 17.6%;
+        margin: 0 1%;
+    }
+
+    .btn--info.theme__colors{
+        background-color: $btn-info;
+        width: 17.6%;
+        margin: 0 2% 0 1%;
+    }
+}

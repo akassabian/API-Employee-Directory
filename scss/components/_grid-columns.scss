@@ -1,0 +1,32 @@
+//Calculate grid columns
+
+@include mediaq(small){
+    @include g-columns-mobile;
+}
+
+@include mediaq(medium) {
+    @include g-columns;
+    .grid__col--12{
+        justify-content: left;
+    }
+    
+}
+
+.grid__row{
+    @include flexbox__settings;
+}
+
+[class^="grid__col--"] {
+    @include mediaq(medium){
+        @include col__gutters;
+        float: left;
+        &:last-of-type {
+            float: right;
+        }
+    }
+}
+
+.centered{
+    margin-left: auto;
+    margin-right: auto;
+}
