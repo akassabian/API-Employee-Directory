@@ -1053,3 +1053,26 @@ a {
 .avatar {
   border-radius: 50%;
 }
+
+.modal__overlay {
+  opacity: 0;
+  z-index: -100;
+  transform: scale 0.4;
+  transition: 0.8s;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#modal__trigger {
+  display: none;
+}
+
+#modal__trigger:checked ~ .modal__overlay {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}

@@ -18,9 +18,10 @@
     </div>
   </div>
 
+  <input id="modal__trigger" type="checkbox">
   <div class="grid__row">
     <div class="grid__col--4 card">
-      <img class="avatar" src='https://randomuser.me/api/portraits/men/65.jpg'>
+      <label for="modal__trigger"><img class="avatar" src='https://randomuser.me/api/portraits/men/65.jpg'></label>
       <div>
         <span>name</span><br>
         <span>email</span><br>
@@ -34,6 +35,12 @@
       test
     </div>
   </div>
+
+
+    <div class="modal__overlay">
+      <label for="modal__trigger">X Close</label>
+      <p>modal content</p>
+     </div>
 
   <div class="grid__row">
     <div class="grid__col--8">
