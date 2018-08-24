@@ -5,84 +5,33 @@
   <meta charset="utf-8">
   <title>Circles UI Kit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="app.js"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<!-- 
-    List of classes used
-
-    Grid:
-    .container
-    .grid__row
-    .grid__col--2
-    .grid__col--3
-    .grid__col--4
-    .grid__col--5
-    .grid__col--6
-    .grid__col--7
-    .grid__col--8
-    .grid__col--9
-    .grid__col--10
-    .grid__col--11
-    .grid__col--12
-    .centered
-    .theme__colors
-
-    Typography:
-    .container
-    .link
-    .blockquote
-    .headline--primary
-    .headline--secondary
-
-    Image:
-    .img--logo
-    .img--frame
-    .img--avatar
-
-    Navigation:
-    .nav__item
-
-    Buttons:
-    .btn--default
-    .btn--success
-    .btn--error
-    .btn--warning
-    .btn--info
-    .theme__colors
-
-    Forms:
-    .form
-    .form__label--hidden
-    .form__input
-
-  -->
-
 <body class="container">
   <div class="grid__row">
-    <div class="grid__col--3">
+    <div class="grid__col--12">
       <a class="link" href="/">
-          <img class="img--logo" alt="circles logo" src="images/logo.png">
+          <img class="img--logo" alt="circles logo" src="images/logo.png">          
         </a>
-    </div>
-    <div class="grid__col--9">
-      <nav role="navigation">
-        <ul class="nav">
-          <li class="nav__item"><a href="#type">Typography</a></li>
-          <li class="nav__item"><a href="#buttons">Buttons</a></li>
-          <li class="nav__item"><a href="#forms">Form</a></li>
-          <li class="nav__item"><a href="#images">Images</a></li>
-          <li class="nav__item"><a href="#grid">Grid</a></li>
-        </ul>
-      </nav>
     </div>
   </div>
 
   <div class="grid__row">
-    <div class="grid__col--12">
-      <div class="card">
-        <p>This is what the navigation menu looks like when the screen is at 769px or higher. When the screen is less than 769px,
-          the menu will be displayed vertically.</p>
+    <div class="grid__col--4 card">
+      <img class="avatar" src='https://randomuser.me/api/portraits/men/65.jpg'>
+      <div>
+        <span>name</span><br>
+        <span>email</span><br>
+        <span>city</span>
       </div>
+    </div>
+    <div class="grid__col--4 card">
+      test
+    </div>
+    <div class="grid__col--4 card">
+      test
     </div>
   </div>
 
@@ -169,6 +118,6 @@
     <div class="grid__col--7 theme__colors centered">.centered .grid__col--7</div>
   </div>
 
+  
 </body>
-
 </html>

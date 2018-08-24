@@ -1044,3 +1044,12 @@ a {
 #grid {
   margin-bottom: 60px;
 }
+
+.card {
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.avatar {
+  border-radius: 50%;
+}
