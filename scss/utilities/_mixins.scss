@@ -80,7 +80,7 @@
     @for $i from 1 through $g__col--count{
 
         $g__total--width: 100%;
-        $target: ($g__col--width * $i) + ($g__gutter--width * ($i - 1));
+        $target: ($g__col--width * $i) + ($g__gutter--width * ($i + 1));
 
         // Generate column modifier classes
 

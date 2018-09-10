@@ -588,14 +588,14 @@ body {
 }
 @media (min-width: 770px) {
   .grid__col--1 {
-    width: 6.5%;
+    width: 10.1666666667%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--1.theme__colors {
-    width: 6.5%;
+    width: 10.1666666667%;
     border-radius: 8px;
     padding: 10px 0;
     display: flex;
@@ -604,14 +604,14 @@ body {
   }
 
   .grid__col--2 {
-    width: 15%;
+    width: 18.3333333333%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--2.theme__colors {
-    width: 15%;
+    width: 18.3333333333%;
     border-radius: 8px;
     padding: 10px 0;
     display: flex;
@@ -620,14 +620,14 @@ body {
   }
 
   .grid__col--3 {
-    width: 23.5%;
+    width: 26.5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--3.theme__colors {
-    width: 23.5%;
+    width: 26.5%;
     border-radius: 8px;
     padding: 10px 0;
     background-color: #deb2ee;
@@ -637,14 +637,14 @@ body {
   }
 
   .grid__col--4 {
-    width: 32%;
+    width: 34.6666666666%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--4.theme__colors {
-    width: 32%;
+    width: 34.6666666666%;
     border-radius: 8px;
     padding: 10px 0;
     background-color: #7ee6fd;
@@ -654,14 +654,14 @@ body {
   }
 
   .grid__col--5 {
-    width: 40.5%;
+    width: 42.8333333333%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--5.theme__colors {
-    width: 40.5%;
+    width: 42.8333333333%;
     border-radius: 8px;
     padding: 10px 0;
     background-color: #88D9A0;
@@ -671,14 +671,14 @@ body {
   }
 
   .grid__col--6 {
-    width: 49%;
+    width: 51%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--6.theme__colors {
-    width: 49%;
+    width: 51%;
     border-radius: 8px;
     padding: 10px 0;
     background-color: #3FABCA;
@@ -688,14 +688,14 @@ body {
   }
 
   .grid__col--7 {
-    width: 57.5%;
+    width: 59.1666666666%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--7.theme__colors {
-    width: 57.5%;
+    width: 59.1666666666%;
     border-radius: 8px;
     padding: 10px 0;
     background-color: #EC9FA3;
@@ -705,14 +705,14 @@ body {
   }
 
   .grid__col--8 {
-    width: 66%;
+    width: 67.3333333333%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--8.theme__colors {
-    width: 66%;
+    width: 67.3333333333%;
     border-radius: 8px;
     padding: 10px 0;
     background-color: #FD9F85;
@@ -722,14 +722,14 @@ body {
   }
 
   .grid__col--9 {
-    width: 74.5%;
+    width: 75.4999999999%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--9.theme__colors {
-    width: 74.5%;
+    width: 75.4999999999%;
     border-radius: 8px;
     padding: 10px 0;
     display: flex;
@@ -738,14 +738,14 @@ body {
   }
 
   .grid__col--10 {
-    width: 83%;
+    width: 83.6666666666%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--10.theme__colors {
-    width: 83%;
+    width: 83.6666666666%;
     border-radius: 8px;
     padding: 10px 0;
     display: flex;
@@ -754,14 +754,14 @@ body {
   }
 
   .grid__col--11 {
-    width: 91.5%;
+    width: 91.8333333333%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .grid__col--11.theme__colors {
-    width: 91.5%;
+    width: 91.8333333333%;
     border-radius: 8px;
     padding: 10px 0;
     display: flex;
@@ -1048,6 +1048,8 @@ a {
 .card {
   border-style: solid;
   box-sizing: border-box;
+  width: 30%;
+  margin-bottom: 20px;
 }
 
 .avatar {
@@ -1067,7 +1069,7 @@ a {
   left: 0;
 }
 
-#modal__trigger {
+input[name=employee-modal-slides] {
   display: none;
 }
 
@@ -1145,4 +1147,10 @@ a {
 
 [id^=slide]:checked + slide {
   left: 0;
+}
+
+#employee--container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

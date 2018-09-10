@@ -24,7 +24,7 @@ $.ajax({
           console.log('start of row');
           document.getElementById("employee--container").innerHTML +=  
               `
-              <div class="grid__col--4 card">
+              <div class="card">
                 <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
                 <div>
                   <span>${firstName} ${lastName}</span><br>
@@ -36,7 +36,7 @@ $.ajax({
 
         else if (i == 1 || i ==4 || i==7 || i==10){
           document.getElementById("employee--container").innerHTML += 
-          `<div class="grid__col--4 card">
+          `<div class="card">
           <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
             <div>
               <span>${firstName} ${lastName}</span><br>
@@ -48,7 +48,7 @@ $.ajax({
 
         else if (i == 2 || i ==5 || i==8 || i==11){
           document.getElementById("employee--container").innerHTML += 
-          `<div class="grid__col--4 card">
+          `<div class="card">
           <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
             <div>
               <span>${firstName} ${lastName}</span><br>
