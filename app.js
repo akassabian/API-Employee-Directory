@@ -52,7 +52,7 @@ $.ajax({
           <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
             <div>
               <span>${firstName} ${lastName}</span><br>
-              <span><a href="${email}">${email}</span><br>
+              <span><a href="mailto:${email}">${email}</a></span><br>
               <span>${city}</span>
             </div>
           </div>
@@ -86,7 +86,14 @@ $.ajax({
         <label for="modal-0__trigger">X Close</label>
         <label for="modal-${i}__trigger"><</label>
         <label for="modal-${i+2}__trigger">></label>
-        <p>modal content</p>
+        <img class="avatar" src='${displayPicLarge}'>
+        <p>${firstName} ${lastName}</p>
+        <p><a href="mailto:${email}">${email}</a><p>
+        <p>${city}</p>
+        <hr>
+        <p>${cell}</p>
+        <p>${street}, ${state} ${postcode}<p>
+        <p>Birthday: ${birthday}</p>
       </div>`
     })
 
