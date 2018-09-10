@@ -1,5 +1,5 @@
 $.ajax({
-  url: 'https://randomuser.me/api/?results=12',
+  url: 'https://randomuser.me/api/?results=12&nat=ca',
   dataType: 'json',
   success: function(data) {
     
@@ -27,7 +27,7 @@ $.ajax({
               <div class="card">
                 <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
                 <div>
-                  <span>${firstName} ${lastName}</span><br>
+                  <span class="name">${firstName} ${lastName}</span><br>
                   <span><a href="${email}">${email}</span><br>
                   <span>${city}</span>
                 </div>
@@ -39,7 +39,7 @@ $.ajax({
           `<div class="card">
           <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
             <div>
-              <span>${firstName} ${lastName}</span><br>
+              <span class="name">${firstName} ${lastName}</span><br>
               <span><a href="${email}">${email}</span><br>
               <span>${city}</span>
             </div>
@@ -51,7 +51,7 @@ $.ajax({
           `<div class="card">
           <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
             <div>
-              <span>${firstName} ${lastName}</span><br>
+              <span class="name">${firstName} ${lastName}</span><br>
               <span><a href="mailto:${email}">${email}</a></span><br>
               <span>${city}</span>
             </div>
@@ -99,3 +99,24 @@ $.ajax({
 
   }
 });
+
+function searchFilter() {
+  // Variables
+  var search, casing, allNames, allNames, i;
+  search = document.getElementById('search');
+  casing = search.value.toUpperCase();
+  allNames = document.getElementsByClassName("name");
+  console.log(allNames.length);
+  console.log('serach initiated');
+  // Loop list items, hide any that don't match query  
+  for (i = 0; i < allNames.length; i++) {
+      console.log(allNames[i].innerHTML);
+      if (allNames[i].innerHTML.toUpperCase().indexOf(casing) > -1) {              
+        document.getElementsByClassName("card")[i].style.display = "";
+      } else {
+        document.getElementsByClassName("card")[i].style.display = "none";
+      }
+  }
+
+
+}
