@@ -1,4 +1,4 @@
-.modal__overlay {
+[class^="modal__overlay"] {
     opacity: 0;
     z-index: -100;
     transform: scale (.4);
@@ -15,11 +15,14 @@
     display: none;
 }
 
-#modal__trigger:checked ~ .modal__overlay{
-    opacity: 1;
-    transform: scale(1);
-    z-index: 100;
+@for $i from 1 through 12{
+    #modal-#{$i}__trigger:checked ~ .modal__overlay-#{$i}{
+        opacity: 1;
+        transform: scale(1);
+        z-index: 100;
+    }
 }
+
 
 [id^="slide"]:checked +slide {
     left: 0;

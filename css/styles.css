@@ -1054,7 +1054,7 @@ a {
   border-radius: 50%;
 }
 
-.modal__overlay {
+[class^=modal__overlay] {
   opacity: 0;
   z-index: -100;
   transform: scale 0.4;
@@ -1071,8 +1071,78 @@ a {
   display: none;
 }
 
-#modal__trigger:checked ~ .modal__overlay {
+#modal-1__trigger:checked ~ .modal__overlay-1 {
   opacity: 1;
   transform: scale(1);
   z-index: 100;
+}
+
+#modal-2__trigger:checked ~ .modal__overlay-2 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-3__trigger:checked ~ .modal__overlay-3 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-4__trigger:checked ~ .modal__overlay-4 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-5__trigger:checked ~ .modal__overlay-5 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-6__trigger:checked ~ .modal__overlay-6 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-7__trigger:checked ~ .modal__overlay-7 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-8__trigger:checked ~ .modal__overlay-8 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-9__trigger:checked ~ .modal__overlay-9 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-10__trigger:checked ~ .modal__overlay-10 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-11__trigger:checked ~ .modal__overlay-11 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+#modal-12__trigger:checked ~ .modal__overlay-12 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 100;
+}
+
+[id^=slide]:checked + slide {
+  left: 0;
 }
