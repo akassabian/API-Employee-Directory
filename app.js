@@ -1,101 +1,62 @@
 $.ajax({
   url: 'https://randomuser.me/api/?results=12&nat=ca',
   dataType: 'json',
-  success: function(data) {
-    
-    console.log(data.results[0].name.first);
+  success: function(data) {   
 
     $.each(data.results, function(i, employee) {
-        let displayPicSmall = employee.picture.thumbnail;
-        let firstName = employee.name.first;
-        console.log(firstName)
-        let lastName = employee.name.last;
+        let displayPicSmall = employee.picture.medium;
+        let firstName = capAsTitle(employee.name.first);
+        let lastName = capAsTitle(employee.name.last);
         let email = employee.email;
-        let city = employee.location.city;
-
-        let displayPicLarge = employee.picture.large;
-        let cell = employee.cell;
-        let street = employee.location.street;
-        let state = employee.location.state;
-        let postcode = employee.location.postcode;
-        let birthday = employee.dob.date;
-
-        if (i == 0 || i ==3 || i==6 || i==9){
-          console.log('start of row');
-          document.getElementById("employee--container").innerHTML +=  
-              `
-              <div class="card">
-                <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
-                <div>
-                  <span class="name">${firstName} ${lastName}</span><br>
-                  <span><a href="${email}">${email}</span><br>
-                  <span>${city}</span>
-                </div>
-              </div>`
-        }
-
-        else if (i == 1 || i ==4 || i==7 || i==10){
-          document.getElementById("employee--container").innerHTML += 
+        let city = capAsTitle(employee.location.city);
+        let username = employee.login.username;
+        
+        document.getElementById("employee--container").innerHTML +=  
           `<div class="card">
-          <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
+            <label for="modal-${i+1}__trigger"><img class="gallery--avatar" src='${displayPicSmall}'></label>
             <div>
               <span class="name">${firstName} ${lastName}</span><br>
+              <span class="username">${username}</span>
               <span><a href="${email}">${email}</span><br>
               <span>${city}</span>
             </div>
           </div>`
-        }
-
-        else if (i == 2 || i ==5 || i==8 || i==11){
-          document.getElementById("employee--container").innerHTML += 
-          `<div class="card">
-          <label for="modal-${i+1}__trigger"><img class="avatar" src='${displayPicSmall}'></label>
-            <div>
-              <span class="name">${firstName} ${lastName}</span><br>
-              <span><a href="mailto:${email}">${email}</a></span><br>
-              <span>${city}</span>
-            </div>
-          </div>
-          `
-        }
-
-
-        
-
-
     })
 
     //Generate Overlays
     $.each(data.results, function(i, employee) {
       let displayPicSmall = employee.picture.thumbnail;
-      let firstName = employee.name.first;
-      console.log(firstName)
-      let lastName = employee.name.last;
+      let firstName = capAsTitle(employee.name.first);
+      let lastName = capAsTitle(employee.name.last);
       let email = employee.email;
-      let city = employee.location.city;
+      let city = capAsTitle(employee.location.city);
 
       let displayPicLarge = employee.picture.large;
       let cell = employee.cell;
-      let street = employee.location.street;
-      let state = employee.location.state;
+      let street = capAsTitle(employee.location.street);
+      let state = capAsTitle(employee.location.state);
       let postcode = employee.location.postcode;
       let birthday = employee.dob.date;
 
       document.getElementById("container").innerHTML +=
-      `<div class="modal__overlay-${i+1}">
-        <label for="modal-0__trigger">X Close</label>
-        <label for="modal-${i}__trigger"><</label>
-        <label for="modal-${i+2}__trigger">></label>
-        <img class="avatar" src='${displayPicLarge}'>
-        <p>${firstName} ${lastName}</p>
-        <p><a href="mailto:${email}">${email}</a><p>
-        <p>${city}</p>
-        <hr>
-        <p>${cell}</p>
-        <p>${street}, ${state} ${postcode}<p>
-        <p>Birthday: ${birthday}</p>
-      </div>`
-    })
+        `<div class="modal__overlay-${i+1}">
+          <div class="overlay--inner">
+            <span class="modal--nav">
+              <label for="modal-0__trigger">X Close</label>
+              <label for="modal-${i}__trigger"><</label>
+              <label for="modal-${i+2}__trigger">></label>
+            </span>
+            <span><img class="overlay--avatar" src='${displayPicLarge}'></span>
+            <p>${firstName} ${lastName}</p>
+            <p><a href="mailto:${email}">${email}</a><p>
+            <p>${city}</p>
+            <hr>
+            <p>${cell}</p>
+            <p>${street}, ${state} ${postcode}<p>
+            <p>Birthday: ${birthday.slice(0,-10)}</p>
+          </div>     
+        </div>`
+        })
 
   }
 });
@@ -106,12 +67,13 @@ function searchFilter() {
   search = document.getElementById('search');
   casing = search.value.toUpperCase();
   allNames = document.getElementsByClassName("name");
-  console.log(allNames.length);
-  console.log('serach initiated');
+  allUserNames = document.getElementsByClassName("username")
+
   // Loop list items, hide any that don't match query  
   for (i = 0; i < allNames.length; i++) {
       console.log(allNames[i].innerHTML);
-      if (allNames[i].innerHTML.toUpperCase().indexOf(casing) > -1) {              
+      console.log(allUserNames[i].innerHTML);
+      if (allNames[i].innerHTML.toUpperCase().indexOf(casing) > -1 || allUserNames[i].innerHTML.toUpperCase().indexOf(casing) > -1) {              
         document.getElementsByClassName("card")[i].style.display = "";
       } else {
         document.getElementsByClassName("card")[i].style.display = "none";
@@ -119,4 +81,10 @@ function searchFilter() {
   }
 
 
+}
+
+function capAsTitle(string) {
+  return string.replace(/\w\S*/g, function(text){
+    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+  });
 }

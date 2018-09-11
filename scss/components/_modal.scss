@@ -9,6 +9,9 @@
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input[name=employee-modal-slides]{
@@ -26,4 +29,34 @@ input[name=employee-modal-slides]{
 
 [id^="slide"]:checked +slide {
     left: 0;
+}
+
+.overlay--inner{
+    background-color: white;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.overlay--inner * {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay--inner img {
+    width: 200px;
+}
+
+.overlay--inner hr {
+    width: 90%;
+}
+
+.overlay--avatar{
+    border-radius: 50%;
+}
+
+.modal--nav{
+    margin-bottom: 20px;
 }
