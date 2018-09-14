@@ -3,6 +3,7 @@ $.ajax({
   dataType: 'json',
   success: function(data) {   
 
+    //Generate Gallery
     $.each(data.results, function(i, employee) {
         let displayPicSmall = employee.picture.medium;
         let firstName = capAsTitle(employee.name.first);
@@ -17,7 +18,7 @@ $.ajax({
             <div>
               <span class="name">${firstName} ${lastName}</span><br>
               <span class="username">${username}</span>
-              <span><a href="${email}">${email}</span><br>
+              <span class="email"><a href="${email}">${email}</span><br>
               <span>${city}</span>
             </div>
           </div>`

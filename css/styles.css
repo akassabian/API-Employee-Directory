@@ -362,6 +362,10 @@ body {
   margin: 30px auto 0;
 }
 
+label {
+  cursor: pointer;
+}
+
 @media (min-width: 1px) and (max-width: 769px) {
   .grid__col--1 {
     width: 100%;
@@ -1051,6 +1055,8 @@ a {
   width: 30%;
   margin-bottom: 20px;
   display: flex;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .gallery--avatar {
