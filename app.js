@@ -16,7 +16,7 @@ $.ajax({
           `<div class="card">
             <label for="modal-${i+1}__trigger"><img class="gallery--avatar" src='${displayPicSmall}'></label>
             <div>
-              <span class="name">${firstName} ${lastName}</span><br>
+              <label for="modal-${i+1}__trigger"><span class="name">${firstName} ${lastName}</span><br></label>
               <span class="username">${username}</span>
               <span class="email"><a href="${email}">${email}</span><br>
               <span>${city}</span>
