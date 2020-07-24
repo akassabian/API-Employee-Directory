@@ -18,7 +18,7 @@ $.ajax({
             <div>
               <label for="modal-${i+1}__trigger"><span class="name">${firstName} ${lastName}</span><br></label>
               <span class="username">${username}</span>
-              <span class="email"><a href="${email}">${email}</span><br>
+              <span class="email"><a href=mailto:"${email}">${email}</span><br>
               <span>${city}</span>
             </div>
           </div>`
