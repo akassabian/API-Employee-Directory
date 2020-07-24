@@ -26,6 +26,7 @@ $.ajax({
 
     //Generate Overlays
     $.each(data.results, function(i, employee) {
+      console.log("test")
       let displayPicSmall = employee.picture.thumbnail;
       let firstName = capAsTitle(employee.name.first);
       let lastName = capAsTitle(employee.name.last);
@@ -34,7 +35,8 @@ $.ajax({
 
       let displayPicLarge = employee.picture.large;
       let cell = employee.cell;
-      let street = capAsTitle(employee.location.street);
+      let streetNumber= employee.location.street.number;
+      let streetName = capAsTitle(employee.location.street.name);
       let state = capAsTitle(employee.location.state);
       let postcode = employee.location.postcode;
       let birthday = employee.dob.date;
@@ -53,7 +55,7 @@ $.ajax({
             <p>${city}</p>
             <hr>
             <p>${cell}</p>
-            <p>${street}, ${state} ${postcode}<p>
+            <p>${streetNumber} ${streetName}, ${state} ${postcode}<p>
             <p>Birthday: ${birthday.slice(0,-10)}</p>
           </div>     
         </div>`
