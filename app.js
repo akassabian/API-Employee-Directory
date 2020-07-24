@@ -14,7 +14,7 @@ $.ajax({
         
         document.getElementById("employee--container").innerHTML +=  
           `<div class="card">
-            <label for="modal-${i+1}__trigger"><img class="gallery--avatar" src='${displayPicSmall}'></label>
+            <label style="display:flex;" for="modal-${i+1}__trigger"><img class="gallery--avatar" src='${displayPicSmall}'></label>
             <div>
               <label for="modal-${i+1}__trigger"><span class="name">${firstName} ${lastName}</span><br></label>
               <span class="username">${username}</span>
